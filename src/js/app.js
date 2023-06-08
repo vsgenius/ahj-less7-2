@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded',(e)=> {
                 e.target.parentElement.parentElement.removeChild(e.target.parentElement)
               }
               xhr.open('DELETE','https://vsgenius.github.io/ahj-less7-1/?id='+id);
-              xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded','Access-Control-Allow-Origin:*');
+              xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
               xhr.send();
             }
       }
@@ -55,7 +55,7 @@ list.addEventListener('click', function(ev) {
       ev.target.classList.toggle('checked');
     }
     xhr.open('PATCH','https://vsgenius.github.io/ahj-less7-1/?id='+ev.target.id);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded','Access-Control-Allow-Origin:*');
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     xhr.send();
   }
 }, false);
@@ -70,7 +70,7 @@ subscribeForm.addEventListener('submit', (e) => {
     newElement(xhr.response);
   }
   xhr.open('POST','https://vsgenius.github.io/ahj-less7-1');
-  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded','Access-Control-Allow-Origin:*');
+  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
   xhr.send(body);
 })
 function newElement(id) {
