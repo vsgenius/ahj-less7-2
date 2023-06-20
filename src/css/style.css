@@ -7,7 +7,6 @@ body {
   * {
     box-sizing: border-box;
   }
-  
   /* Удалите поля и отступы из списка */
   ul {
     margin: 0;
@@ -45,7 +44,7 @@ body {
   ul li.checked {
     background: #888;
     color: #fff;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
   }
   
   /* Добавить отметку "проверено" при нажатии на нее */
@@ -63,6 +62,26 @@ body {
   }
   
   /* Стиль кнопки закрытия */
+  .edit {
+    position: absolute;
+    right: 40px;
+    top: 0px;
+    padding: 12px 15px 10px 15px;
+  }
+  .edit:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  .find {
+    position: absolute;
+    right: 80px;
+    top: 0px;
+    padding: 12px 15px 10px 15px;
+  }
+  .find:hover {
+    background-color: #f44336;
+    color: white;
+  }
   .close {
     position: absolute;
     right: 0;
@@ -92,13 +111,13 @@ body {
   
   /* Стиль ввода */
   input {
-    margin: 0;
     border: none;
     border-radius: 0;
     width: 75%;
     padding: 10px;
     float: left;
     font-size: 16px;
+
   }
   
   /* Стиль кнопки "Добавить" */
@@ -118,3 +137,119 @@ body {
   .addBtn:hover {
     background-color: #bbb;
   }
+  .itc-modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(0 0 0 / 50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    pointer-events: none;
+  }
+  
+  .itc-modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 10px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgb(0 0 0 / 20%);
+    border-radius: 0.3rem;
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 30%);
+    transition: opacity 0.3s ease-in;
+  }
+  
+  @media (min-width: 576px) {
+    .itc-modal-content {
+      max-width: 500px;
+      margin: 50px auto;
+    }
+  }
+  
+  .itc-modal-show .itc-modal-backdrop,
+  .itc-modal-show .itc-modal-content {
+    z-index: 1050;
+    overflow-y: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .itc-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eceeef;
+  }
+  
+  .itc-modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  .itc-modal-btn-close {
+    float: right;
+    color: #000;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: sans-serif;
+    line-height: 1;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+  }
+  
+  .itc-modal-btn-close:focus,
+  .itc-modal-btn-close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  
+  .itc-modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+  }
+  
+  .itc-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+  }
+  .btn-cancel {
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  .btn-ok {
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
